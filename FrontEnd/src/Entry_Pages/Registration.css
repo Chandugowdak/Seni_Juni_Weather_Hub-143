@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6d99c0;
+    --btn-hover-color: #0056b3;
+    --card-bg-color: #d4cfe9;
+    --text-color: #333333;
+    --link-hover-color: #218838;
+    --border-radius: 12px;
+    --input-bg: #f1f5f8;
+    --input-border: #ddd;
+    --input-focus-border: #007bff;
+}
+
+body {
+    background-color: #6887be;
+    font-family: 'Arial', sans-serif;
+}
+
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.form-floating {
+    position: relative;
+}
+
+.form-floating input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-floating input:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 0.25rem rgba(38, 143, 255, 0.25);
+}
+
+.form-floating label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-floating input:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    padding: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+}
+
+.text-success {
+    color: var(--primary-color);
+}
+
+.text-success:hover {
+    color: var(--link-hover-color);
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-floating input {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}

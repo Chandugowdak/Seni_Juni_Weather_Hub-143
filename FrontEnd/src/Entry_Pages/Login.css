@@ -1,0 +1,181 @@
+/* Styling for the background */
+#Top_Div {
+    background: linear-gradient(to bottom right, #9974c1, #7d97c4); /* New background gradient */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+/* Top-left logo styling */
+.logo-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.logo-top-left img {
+    width: 50px;
+    height: 50px;
+    border-radius:40px;;
+
+}
+
+/* Login container styling */
+.login-container {
+    background: rgba(255, 255, 255, 0.9); /* Light, semi-transparent background */
+    padding: 40px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Inside logo styling */
+.logo-inside img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid #2575fc; /* Blue border */
+}
+
+/* Responsive heading */
+h2 {
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+    animation: zoomIn 1.2s ease-in-out;
+}
+
+/* Label styling */
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+}
+
+/* Input styling */
+input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #2575fc;
+    box-shadow: 0px 0px 10px rgba(37, 117, 252, 0.5); /* Blue focus effect */
+}
+
+
+
+
+button:hover {
+    background: linear-gradient(to right, #966cdd, #706bff);
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(255, 71, 87, 0.5);
+}
+
+/* Registration link styling */
+.register-link {
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.register-link:hover {
+    color: #e84118;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive design for small screens */
+@media (max-width: 576px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

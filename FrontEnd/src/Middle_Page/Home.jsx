@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "./Home.css"; // Import CSS for styling
 import image from "./Login_Image.webp";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,Outlet } from "react-router-dom";
 import MiddleSection from "./MiddleSection";
 
 const Home = () => {
@@ -78,7 +78,8 @@ const Home = () => {
      
       <MiddleSection/>
        {/* Error Message */}
-       {error && <h1 className="text-center text-danger mt-5">404 ERROR</h1>}
+       {error && <h4 className="text-center fw-bold text-danger mt-5">404 Error: Page Not Found on Our Server</h4>}
+       <Outlet />
     </div>
   );
 };

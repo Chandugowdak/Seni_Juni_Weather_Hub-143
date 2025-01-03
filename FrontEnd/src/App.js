@@ -1,46 +1,48 @@
 import React from 'react';
 import Login from './Entry_Pages/Login';
 import Registration from './Entry_Pages/Registration';
-import {BrowserRouter as Router , Route,Switch} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import LinkerPage from './Entry_Pages/LinkerPage';
 import Home from './Middle_Page/Home';
 import Fetch from './Middle_Page/Fetch';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Hassan from './Search_Section/Hassan';
 import Benglor from './Search_Section/Benglor';
-import Today_Weather from './Middle_Page/Today_Weather';
+import TodayWeather from './Middle_Page/TodayWeather';
 import BioDiversity from './Menu_Section/BioDiverstiy';
 import Pollution from './Menu_Section/Pollution';
 import PrivatePolicy from './Menu_Section/PrivatePolicy';
-import WeatherNews from './Menu_Section/WeatherNewes';
+import WeatherNews from './Menu_Section/TeslaWeather';
 import Hoverly from './Middle_Page/Hoverly';
 import Daily from './Middle_Page/Daily';
 import Predicted  from './Middle_Page/Predicted';
+import AirQuality from './Middle_Page/AirQuality';
 
 const App = ()=>{
   return(
-    <div className=''>
-      <Router>
-      <LinkerPage/>
+    <div>
       
-        <Switch>
-       
-          <Route path='/login' component={Login}/>
-          <Route path='/register' component={Registration}/>
-          <Route path='/hom' component={Home}/>
-          <Route path="/Fet" component={Fetch}/>
-          <Route path='/hassan' component={Hassan}/>
-          <Route path='/Beng' component={Benglor}/>
-          <Route path="/Today" component={Today_Weather}/>
-          <Route path="/hoverly" component={Hoverly}/>
-          <Route path='/Daily' component={Daily}/>
-          <Route path='/Pred' component={Predicted }/>
-          <Route path='/Bio' component={BioDiversity}/>
-          <Route path='/Pollut' component={Pollution}/>
-          <Route path='/Private' component={PrivatePolicy}/>
-          <Route path='/Weather' component={WeatherNews}/>
-        </Switch>
-      </Router>
+      <LinkerPage />
+     
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/" element={<Home/>}>
+          <Route path="/Fet" element={<Fetch />} />
+          <Route path="/hassan" element={<Hassan />} />
+          <Route path="/Beng" element={<Benglor />} />
+          <Route path="/Today" element={<TodayWeather />} />
+          <Route path="/hoverly" element={<Hoverly />} />
+          <Route path="/Daily" element={<Daily />} />
+          <Route path="/Pred" element={<Predicted />} />
+          <Route path="/Bio" element={<BioDiversity />} />
+          <Route path="/Pollut" element={<Pollution />} />
+          <Route path="/Private" element={<PrivatePolicy />} />
+          <Route path="/Weather" element={<WeatherNews />} />
+          <Route path="/Air_Qu" element={<AirQuality />} />
+          </Route>
+        </Routes>
+      
 
     </div>
   )

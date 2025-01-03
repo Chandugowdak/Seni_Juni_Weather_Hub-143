@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import "./Home.css"; // Import CSS for styling
-import image from "./Logo.jpg";
-import { Link, useHistory } from "react-router-dom";
+import image from "./Login_Image.webp";
+import { Link, useNavigate } from "react-router-dom";
 import MiddleSection from "./MiddleSection";
 
 const Home = () => {
@@ -11,16 +11,16 @@ const Home = () => {
   
   const [error, setError] = useState(false); // State for error handling
 
-  const history = useHistory(); // To navigate between pages
+  const history = useNavigate(); // To navigate between pages
 
   const handleSearch = () => {
     if (search.trim() === "") {
       alert("No Data To Search");
     } else if (search.toLowerCase() === "kodagu"){
       setError(false);
-      history.push("/Beng");
+      history("/Beng");
     } else if( search.toLowerCase() === "hassan") {
-            history.push('/hassan');
+            history('/hassan');
             setError(false);
     }  else{alert("Invalid Data");
     setError(true);
@@ -32,13 +32,13 @@ const Home = () => {
       {/* Navigation Bar */}
       <div className="Nav_Bar">
         <div className="Nav_Left">
-          <img className=""
+          <img 
             id="image_id"
             src={image}
             alt="Logo"
-            height="55px"
+            height="70px"
             width="110px"
-            title="Price_Loom"
+            title="𝓢𝓮𝓷𝓲_𝓙𝓾𝓷𝓲_𝓦𝓮𝓪𝓽𝓱𝓮𝓻_𝓗𝓾𝓫"
           />
           <input
             onChange={(e) => setSearch(e.target.value)}
@@ -63,7 +63,7 @@ const Home = () => {
             BioDiversity
           </Link>
           <Link className="Nav_Section" to="/Weather">
-            Weather Newes
+            Tesla Newes
           </Link>
           <Link className="Nav_Section" to="/Pollut">
             Pollution

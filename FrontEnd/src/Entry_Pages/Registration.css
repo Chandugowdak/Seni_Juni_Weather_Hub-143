@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6d99c0;
+    --primary-color: #ff96fcad;
+    --secondary-color: #6dc0b6;
     --btn-hover-color: #0056b3;
-    --card-bg-color: #d4cfe9;
+    --card-bg-color: #ebebee;
     --text-color: #333333;
     --link-hover-color: #218838;
     --border-radius: 12px;
@@ -11,10 +11,7 @@
     --input-focus-border: #007bff;
 }
 
-body {
-    background-color: #6887be;
-    font-family: 'Arial', sans-serif;
-}
+
 
 .container-fluid {
     min-height: 100vh;
@@ -40,6 +37,7 @@ h2 {
 
 .form-floating {
     position: relative;
+   
 }
 
 .form-floating input {
@@ -76,7 +74,7 @@ h2 {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+   
     border: none;
     border-radius: var(--border-radius);
     font-size: 1.1rem;

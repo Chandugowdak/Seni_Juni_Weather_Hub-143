@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Today_Weather.css"; // Import custom CSS for styling
+import "./TodayWeather.css"; // Import custom CSS for styling
 
 const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
 const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";
 const LATITUDE = "12.9716"; // Latitude for Bengaluru
 const LONGITUDE = "77.5946"; // Longitude for Bengaluru
 
-function Today_Weather() {
+function TodayWeather() {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
@@ -84,4 +84,4 @@ function Today_Weather() {
   );
 }
 
-export default Today_Weather;
+export default TodayWeather;

@@ -5,64 +5,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: rgba(255, 255, 255, 0.2);
+  padding: 15px ;
+  background: rgba(115, 240, 185, 0.2);
   backdrop-filter: blur(10px);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius:10px;
+  margin:10px;
 }
 
 
-
-/* RESPONSIVE STYLES */
-@media (max-width: 970px) {
-  .Nav_Right {
-    display: none;
-    flex-direction: row;
-    gap: 0px;
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 100px;
-    right: 0px;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .Nav_Right.active {
-    display: flex;
-  }
-
- 
-}
-
-/* LEFT SECTION: LOGO AND SEARCH */
-.Nav_Left {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-/* RIGHT SECTION: NAVIGATION LINKS */
-.Nav_Right {
-  display: flex;
-  gap: 30px;
-}
 
 /* NAVIGATION LINK STYLES */
 .Nav_Section {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 16px;
   padding: 12px 18px;
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
-  color: #fff;
-  background: linear-gradient(135deg, #3cb4aea8, #2a97ac);
+  color: #272323;
+  background: linear-gradient(135deg, #ae7d68a8, #9defff);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
 }
 
 .Nav_Section:hover {
@@ -75,7 +39,7 @@
 #image_id {
   border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+  
 }
 
 /* SEARCH SECTION STYLES */
@@ -84,11 +48,14 @@
   border: 2px solid #3cb4af;
   border-radius: 10px;
   width: 250px;
-  font-size: 14px;
+  height:50px;
+  font-weight:bold;
+  font-size: 20px;
   outline: none;
   transition: all 0.4s ease-in-out;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(248, 247, 247);
   color: #000000;
+  
 }
 
 .Search_Section:focus {
@@ -101,18 +68,15 @@
   padding: 10px;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(135deg, #2aa79e, #3cb4af);
-  color: #fff;
-  font-size: 16px;
+  background: linear-gradient(135deg, #d8e4e3, #ffffff);
+  color: #090909;
+  font-size: 20px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
+  margin:10px;
+  
 }
 
 #button:hover {
-  background: linear-gradient(135deg, #3cb4af, #2aa79e);
-  transform: translateY(-3px);
+  background: linear-gradient(135deg, #c0d1d0, #4c7371);
+ 
 }

@@ -31,7 +31,7 @@ const Home = () => {
     <div>
       {/* Navigation Bar */}
       <div className="Nav_Bar">
-        <div className="Nav_Left">
+       
           <img 
             id="image_id"
             src={image}
@@ -53,26 +53,35 @@ const Home = () => {
           >
             <i className="fas fa-search p-1"></i>
           </button>
-        </div>
+        
 
       
 
-        <div className="Nav_Right">
+        
         
           <Link className="Nav_Section" to="/Bio">
-            BioDiversity
+          Kodagu
           </Link>
           <Link className="Nav_Section" to="/Weather">
-            Tesla Newes
+          Hassan
           </Link>
           <Link className="Nav_Section" to="/Pollut">
-            Pollution
+          Mysuru
           </Link>
           <Link className="Nav_Section" to="/Private">
-           Private Policy
+          Dakshina Kannada
           </Link>
-         
-        </div>
+         <Link className="Nav_Section" to="/Private">
+         Hubballi
+         </Link>
+         <Link className="Nav_Section" to="/Private">
+         Kalaburagi
+         </Link>
+         <Link className="Nav_Section" to="/Private">
+         Belagavi
+         </Link>
+          
+        
       </div>
 
      

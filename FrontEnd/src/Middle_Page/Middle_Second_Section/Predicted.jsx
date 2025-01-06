@@ -82,4 +82,4 @@ const Predicted = () => {
   );
 };
 
-export default Predicted ;
+export default Predicted;

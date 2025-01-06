@@ -1,0 +1,119 @@
+.air-quality-container {
+    background: linear-gradient(135deg, #4b95de93, #b3d37fa6);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    color: #004d40;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .header strong {
+    color: #00796b;
+    font-size: 1.1rem;
+  }
+  
+  .current-aqi {
+    background: rgba(0, 128, 128, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aqi-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .aqi-circle.text-success {
+    background: linear-gradient(135deg, #773333, #8bc34a);
+  }
+  
+  .aqi-circle.text-primary {
+    background: linear-gradient(135deg, #2196f3, #64b5f6);
+  }
+  
+  .aqi-circle.text-warning {
+    background: linear-gradient(135deg, #ff9800, #ffb74d);
+  }
+  
+  .aqi-circle.text-danger {
+    background: linear-gradient(135deg, #f44336, #e57373);
+  }
+  
+  .aqi-circle.text-dark {
+    background: linear-gradient(135deg, #616161, #9e9e9e);
+  }
+  
+  .pollutants {
+    margin-top: 30px;
+   
+  }
+  
+  .pollutants h3 {
+    font-size: 1.6rem;
+    color: #004d40;
+    font-weight: bold;
+    border-bottom: 2px solid #004d40;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .pollutant {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .pollutant:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pollutant .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #004d40;
+    background: #b2dfdb;
+    border: 2px solid #004d40;
+    
+  }
+  
+  .pollutant strong {
+    color: #00796b;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .pollutant span {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  
+  .text-muted {
+    color: #757575;
+  }
+  
+  .text-note {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-style: italic;
+  }
+  

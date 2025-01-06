@@ -22,7 +22,7 @@ const Login = () => {
                 .then((res) => {
                     if (res.data.message === "Success") {
                         alert("Login Successfully");
-                        navigate('/home');
+                        navigate('/');
                     } else if (res.data.message === "Invalid Password") {
                         alert("Invalid Username or Password");
                     } else {

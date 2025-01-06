@@ -12,6 +12,7 @@ const LinkerPage = ()=>{
             <Link to='/Pollut'></Link>
             <Link to='/Private'></Link>
             <Link to='/Weather'></Link>
+            <Link to='/Coorg'></Link>
 
         </div>
     )

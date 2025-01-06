@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./Home.css"; // Import CSS for styling
 import image from "./Login_Image.webp";
 import { Link, useNavigate,Outlet } from "react-router-dom";
-import MiddleSection from "./MiddleSection";
+import MiddleSection from "../Middle_Second_Section/MiddleSection";
 
 const Home = () => {
   const [search, setSearch] = useState(""); // State for search input

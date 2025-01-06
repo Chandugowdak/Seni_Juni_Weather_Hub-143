@@ -13,13 +13,16 @@ const queryClient = new QueryClient(); //CREATING THE OBJECT
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <QueryClientProvider client={queryClient}>
-<React.StrictMode>
+
   <BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+   <React.StrictMode>
+  
     <App />
-  </BrowserRouter>
+  
   </React.StrictMode>
   </QueryClientProvider>
+  </BrowserRouter>
  
 );
 

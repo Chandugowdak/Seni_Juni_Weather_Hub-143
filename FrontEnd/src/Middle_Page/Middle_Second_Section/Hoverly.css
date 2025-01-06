@@ -1,0 +1,58 @@
+/* Container for the hourly forecast */
+.container{
+  max-width:1500px;
+  
+}
+
+
+.hourly-forecast-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* Creates 4 equal columns */
+  gap: 10px;  /* Adds space between the cards */
+  
+  justify-items: center;  /* Center cards horizontally */
+  background-color: rgb(224, 212, 212);
+  padding:50px;
+  margin:10px;
+}
+
+/* Style for each weather card */
+.weather-card {
+  position: relative;
+  width: 100%;  /* Make sure each card takes up 100% of the column width */
+  min-width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Content inside the weather card */
+.weather-card-content {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  background:linear-gradient(rgb(224, 159, 159),rgb(113, 113, 230));
+  position: relative;
+  transition: all 0.3s ease;
+  padding:30px;
+}
+
+/* Weather Icon size */
+.weather-icon {
+  width: 70px;
+  height: 70px;
+}
+
+/* Styling for card text and time */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin: 5px 0;
+}

@@ -1,0 +1,114 @@
+/* Light Background Color */
+#Main_Div{
+    background: linear-gradient(135deg, #116db3, #7b909f); /* Light pastel gradient */
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Darker text color for contrast */
+    padding:50px;
+
+
+   
+    
+  }
+  
+  /* Container for the weather data */
+  .container {
+    max-width: 1500px;
+    width: 100%;
+    padding: 10px;
+    
+    
+  
+  }
+  
+  /* Top Section - City name and weather image */
+  .top-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+
+  
+  /* Weather Image */
+  .weather-image-container {
+    background-color: rgba(22, 1, 1, 0.3); /* Slightly transparent background */
+    border-radius: 10px; /* Square shape with rounded edges */
+    padding: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+  
+  .weather-icon {
+    width: 100px;  /* Square size */
+    height: 100px; /* Square size */
+    object-fit: contain;
+  }
+  
+  /* Bottom Section - Morning, Afternoon, Evening */
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .section {
+    background-color: rgba(0, 0, 0, 0.2); /* Light background for the sections */
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .section h4 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: #0277bd; /* Light blue for subheadings */
+  }
+  
+  .temperature {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0288d1; /* Lighter blue for temperature */
+  }
+  
+  .section img {
+    width: 80px; /* Square size for image */
+    height: 80px; /* Square size for image */
+    object-fit: contain;
+  }
+  
+  /* Responsive Design for small screens */
+  @media (max-width: 768px) {
+    .bottom-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .section {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  
+    .weather-icon {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  /* Custom style for h1 - Today's Weather heading */
+h1 {
+    font-size: 3.5rem; /* Adjust font size to make it more prominent */
+    font-weight: bold; /* Bold text for better visibility */
+    color: #00796b; /* Teal color for a fresh look */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Deeper shadow for a more impactful look */
+    letter-spacing: 2px; /* Slight spacing between letters */
+    margin-bottom: 30px; /* Add space below the heading */
+  }
+  
+  /* Adding responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem; /* Slightly smaller font size on smaller screens */
+      text-align: center; /* Center-align the heading on small screens */
+    }
+  }
+  
+  

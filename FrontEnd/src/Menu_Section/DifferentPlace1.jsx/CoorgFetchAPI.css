@@ -1,0 +1,109 @@
+/* Custom CSS for weather card styling */
+.container {
+    max-width: 1500px;
+    background-color: rgb(204, 224, 204);
+    margin: 0 auto;
+    padding: 110px;
+    max-height: 2000px;
+  }
+  
+  /* Heading Text Styling */
+  .heading-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center-align the heading */
+  }
+  
+  /* Custom Card Styling */
+  .custom-card {
+    background: linear-gradient(#607f89, #d8c0c0);
+    color: #333;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Hover effect for cards */
+  .custom-card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Weather Icon Styling */
+  .weather-icon {
+    width: 80px; /* Adjust size of the weather icon */
+    height: 80px;
+    margin-bottom: 15px; /* Space between icon and text */
+  }
+  
+  /* Card Body Styling */
+  .card-body {
+    padding: 50px;
+   
+  }
+  
+  /* Card Title Styling */
+  .card-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center; /* Center-align the title */
+  }
+  
+  /* Card Text Styling */
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Add animation for card fade-in */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 50px; /* Reduce padding on smaller screens */
+    }
+  
+    .heading-text {
+      font-size: 2rem; /* Smaller font size for small screens */
+    }
+  
+    .custom-card {
+      margin-bottom: 20px; /* Space between cards */
+    }
+  
+    .col-md-4 {
+      width: 100% !important; /* Full-width cards on smaller screens */
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Large Screen Responsiveness */
+  @media (min-width: 1200px) {
+    .container {
+      padding: 120px; /* Increased padding on larger screens */
+    }
+  
+    .heading-text {
+      font-size: 3rem; /* Larger font size for large screens */
+    }
+  
+    .custom-card {
+      max-width: 400px; /* Maximum width for cards */
+      margin: 0 auto; /* Center align cards */
+    }
+  }
+  

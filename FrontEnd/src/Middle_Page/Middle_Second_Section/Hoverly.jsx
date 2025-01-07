@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Hoverly.css';  // Custom CSS for additional styling
+import { CreateContext } from '../../Context_Globel_Store/CreateContext';
+
 
 const Hoverly = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [latitude, setLatitude] = useState(12.3051); // Default latitude
-  const [longitude, setLongitude] = useState(75.7977); // Default longitude
+  const {longitude,latitude} = useContext(CreateContext);
+ 
 
   const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
   const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";

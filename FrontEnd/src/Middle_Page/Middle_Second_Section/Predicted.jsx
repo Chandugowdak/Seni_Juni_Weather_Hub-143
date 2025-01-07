@@ -1,26 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Predicted.css"; // Importing custom CSS file for styles
+import { CreateContext } from "../../Context_Globel_Store/CreateContext";
 
 const Predicted = () => {
   const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
   const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";
-  const LATITUDE = "12.9716"; // Bengaluru
-  const LONGITUDE = "77.5946";
 
   const [dailyForecast, setDailyForecast] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [cityName, setCityName] = useState(""); // State for city name
+  const { longitude, latitude } = useContext(CreateContext); // Latitude and Longitude
 
   useEffect(() => {
     const fetchDailyForecast = async () => {
       try {
         const response = await fetch(
-          `${API_URL}?lat=${LATITUDE}&lon=${LONGITUDE}&units=metric&appid=${API_KEY}`
+          `${API_URL}?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
         );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+
+        // Set the city name from the response data
+        setCityName(data.city.name);
 
         // Filter the list for daily summaries (first entry for each day)
         const dailyData = data.list.filter((item, index, array) => {
@@ -40,7 +44,7 @@ const Predicted = () => {
     };
 
     fetchDailyForecast();
-  }, []);
+  }, [longitude, latitude]);
 
   if (loading) {
     return <p className="loading fw-bold text-center text-success fs-2">Loading daily weather forecast...</p>;
@@ -56,7 +60,7 @@ const Predicted = () => {
 
   return (
     <div className="forecast-container-alt">
-      <h2 className="forecast-title-alt">5-Day Weather Forecast for Bengaluru</h2>
+      <h2 className="forecast-title-alt">5-Day Weather Forecast for {cityName}</h2>
       <div className="forecast-grid-alt">
         {dailyForecast.map((day, index) => (
           <div className="forecast-card-alt" key={index}>

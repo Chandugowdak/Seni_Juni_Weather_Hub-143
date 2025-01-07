@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CoorgFetchAPI.css';  // Custom CSS for additional styling
-
+import { CreateContext } from '../../Context_Globel_Store/CreateContext';
 
 const CoorgFetchAPI = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [Latitude_Set , setLatitude] = useState(12.3051);
+  const { longitude, latitude } = useContext(CreateContext); // Latitude and Longitude
 
-  
-const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
-const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";
-const LATITUDE = Latitude_Set; // Latitude for Coorg
-const LONGITUDE = "75.7977"; // Longitude for Coorg
+  const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
+  const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
         const response = await fetch(
-          `${API_URL}?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`
+          `${API_URL}?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
         );
         const data = await response.json();
         setWeatherData(data);
@@ -29,13 +26,13 @@ const LONGITUDE = "75.7977"; // Longitude for Coorg
       }
     };
     fetchWeatherData();
-  }, [setLatitude]);
+  }, [longitude, latitude]);
 
   if (loading) {
     return (
       <div className="text-center mt-5">
         <div className="spinner-border text-secondary" role="status"></div>
-        <span className="ms-5  text-center text-success fw-bold fs-4">Loading...</span>
+        <span className="ms-5 text-center text-success fw-bold fs-4">Loading...</span>
       </div>
     );
   }
@@ -43,6 +40,9 @@ const LONGITUDE = "75.7977"; // Longitude for Coorg
   if (!weatherData) {
     return <div className="text-center mt-5">Error loading weather data.</div>;
   }
+
+  // Get the city name dynamically from the weather data
+  const cityName = weatherData.city ? weatherData.city.name : "City";
 
   // Filter for 6 AM, 12 PM, and 6 PM data
   const todayForecast = weatherData.list.filter(item => {
@@ -60,7 +60,9 @@ const LONGITUDE = "75.7977"; // Longitude for Coorg
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center mb-4 heading-text">Today's Weather Forecast for Coorg</h1>
+      <h1 className="text-center mb-4 heading-text">
+        Today's Weather Forecast for {cityName}
+      </h1>
       <div className="row justify-content-center">
         {filteredForecast.map((weather, index) => (
           weather && (

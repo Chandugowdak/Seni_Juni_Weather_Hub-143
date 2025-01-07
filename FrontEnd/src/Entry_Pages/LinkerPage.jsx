@@ -7,12 +7,10 @@ const LinkerPage = ()=>{
             <Link to='/login'></Link>
             <Link to='/register'></Link>
             <Link to="/hom" ></Link>
-            <Link to="/Fet"></Link>
-            <Link to="/Bio"></Link>
-            <Link to='/Pollut'></Link>
-            <Link to='/Private'></Link>
-            <Link to='/Weather'></Link>
-            <Link to='/Coorg'></Link>
+           
+           
+            
+            
 
         </div>
     )

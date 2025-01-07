@@ -1,96 +1,82 @@
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Montley.css';
+import React, { useState, useEffect } from "react";
+import './AirQuality.css'; // Custom CSS file for additional styling
 
-const Montley = () => {
+const AirQualityDetails = () => {
   const API_URL = "https://api.openweathermap.org/data/2.5/air_pollution";
   const API_KEY = "38d4bf9d0dd291a487f04b1835393b31";
   const LATITUDE = "12.9716"; // Bengaluru
   const LONGITUDE = "77.5946"; // Bengaluru
 
-  const [airQuality, setAirQuality] = useState(null);
+  const [airComponents, setAirComponents] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const componentNames = {
+    co: "Carbon Monoxide",
+    no: "Nitric Oxide",
+    no2: "Nitrogen Dioxide",
+    o3: "Ozone",
+    so2: "Sulfur Dioxide",
+    pm2_5: "Particulate Matter (≤ 2.5 microns)",
+    pm10: "Particulate Matter (≤ 10 microns)",
+    nh3: "Ammonia",
+  };
 
   useEffect(() => {
-    const fetchAirQuality = async () => {
+    const fetchAirQualityData = async () => {
       try {
-        const url = `${API_URL}?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}`;
-        const response = await fetch(url);
+        const response = await fetch(
+          `${API_URL}?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}`
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         const data = await response.json();
-        setAirQuality(data);
+        console.log("Air quality data:", data); // Debugging log
+        setAirComponents(data.list[0].components); // Extract air components
         setLoading(false);
       } catch (error) {
         console.error("Error fetching air quality data:", error);
+        setError(error.message);
         setLoading(false);
       }
     };
 
-    fetchAirQuality();
+    fetchAirQualityData();
   }, []);
 
   if (loading) {
-    return (
-      <div className="text-center mt-5">
-        <div className="spinner-border text-secondary" role="status"></div>
-        <span className="ms-3">Loading Air Quality Data...</span>
-      </div>
-    );
+    return <p className="loading text-center text-success fw-bold fs-3">Loading air quality data...</p>;
   }
 
-  if (!airQuality || !airQuality.list || airQuality.list.length === 0) {
-    return <div className="text-center mt-5">No air quality data available.</div>;
+  if (error) {
+    return <p className="loading">Error: {error}</p>;
   }
 
-  const aqi = airQuality.list[0].main.aqi; // Air Quality Index
-  const components = airQuality.list[0].components;
+  if (!airComponents) {
+    return <p className="loading">No air quality data available.</p>;
+  }
 
-  const getAQIDescription = (aqiValue) => {
-    switch (aqiValue) {
-      case 1: return "Good";
-      case 2: return "Fair";
-      case 3: return "Moderate";
-      case 4: return "Poor";
-      case 5: return "Very Poor";
-      default: return "Unknown";
-    }
-  };
-
+  // Bootstrap-based design for displaying air components
   return (
-    <div className="container mt-5">
-      <h1 className="text-center mb-4">Air Quality in Bengaluru</h1>
-      <div className="card shadow-lg">
-        <div className="card-body">
-          <h5>Air Quality Index (AQI): {aqi} - {getAQIDescription(aqi)}</h5>
-          <ul className="list-group mt-3">
-            <li className="list-group-item">
-              <strong>Carbon Monoxide (CO):</strong> {components.co} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Nitrogen Monoxide (NO):</strong> {components.no} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Nitrogen Dioxide (NO₂):</strong> {components.no2} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Ozone (O₃):</strong> {components.o3} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Sulphur Dioxide (SO₂):</strong> {components.so2} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Fine Particles (PM2.5):</strong> {components.pm2_5} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Coarse Particles (PM10):</strong> {components.pm10} µg/m³
-            </li>
-            <li className="list-group-item">
-              <strong>Ammonia (NH₃):</strong> {components.nh3} µg/m³
-            </li>
-          </ul>
-        </div>
+    <div className="container air-quality-details">
+      <h2 className="section-title">Air Quality Components for Bengaluru</h2>
+      <div className="row">
+        {Object.entries(airComponents).map(([component, value]) => (
+          <div className="col-md-4 col-sm-6 mb-4" key={component}>
+            <div className="card air-quality-card">
+              <div className="card-body">
+                <h5 className="card-title text-capitalize">
+                  {componentNames[component] || component}
+                </h5>
+                <p className="card-text">{value} µg/m³</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default Montley;
+export default AirQualityDetails;

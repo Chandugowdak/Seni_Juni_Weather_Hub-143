@@ -1,0 +1,98 @@
+/* Make the container occupy the full page */
+.forecast-container-alt {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #000000; /* White text for better contrast */
+  box-sizing: border-box;
+  margin-top: 110px; /* Remove margin to fill the screen */
+}
+
+/* Title with vibrant text and shadow */
+.forecast-title-alt {
+  text-align: center;
+  font-size: 3rem;
+  color: #000000; /* White color for the title */
+ margin:30px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+}
+
+/* Grid layout for the forecast cards */
+.forecast-grid-alt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive design */
+  gap: 30px;
+  width: 100%; /* Full width of the container */
+  max-width: 1200px; /* Limit max width */
+}
+
+/* Individual forecast cards */
+.forecast-card-alt {
+  background: rgba(24, 45, 176, 0.633); /* Semi-transparent white */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
+  text-align: center;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect */
+.forecast-card-alt:hover {
+  transform: translateY(-15px); /* More lift on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+}
+
+/* Date and time text */
+.forecast-time-alt {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff; /* White color for better contrast */
+  margin-bottom: 15px;
+  letter-spacing: 1px; /* Add some spacing */
+  font-weight: bold;
+}
+
+/* Weather icon styling */
+.forecast-icon-alt {
+  width: 120px;
+  height: 120px;
+  margin: 20px 0;
+}
+
+/* Weather description text */
+.forecast-description-alt {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-style: italic;
+  text-transform: capitalize; /* Capitalize the description */
+}
+
+/* Temperature and other details */
+.forecast-temp-alt,
+.forecast-humidity-alt {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+  .forecast-title-alt {
+    font-size: 2.5rem;
+  }
+  .forecast-card-alt {
+    padding: 20px;
+  }
+  .forecast-time-alt,
+  .forecast-temp-alt,
+  .forecast-humidity-alt {
+    font-size: 1rem;
+  }
+}

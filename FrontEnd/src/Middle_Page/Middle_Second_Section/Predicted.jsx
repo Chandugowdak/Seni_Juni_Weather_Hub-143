@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Predicted.css"; // Importing custom CSS file for styles
 
 const Predicted = () => {
   const API_URL = "https://api.openweathermap.org/data/2.5/forecast";
@@ -42,7 +43,7 @@ const Predicted = () => {
   }, []);
 
   if (loading) {
-    return <p className="loading">Loading daily weather forecast...</p>;
+    return <p className="loading fw-bold text-center text-success fs-2">Loading daily weather forecast...</p>;
   }
 
   if (error) {
@@ -54,12 +55,12 @@ const Predicted = () => {
   }
 
   return (
-    <div className="forecast-container">
-      <h2 className="forecast-title">5-Day Weather Forecast for Bengaluru</h2>
-      <div className="forecast-grid">
+    <div className="forecast-container-alt">
+      <h2 className="forecast-title-alt">5-Day Weather Forecast for Bengaluru</h2>
+      <div className="forecast-grid-alt">
         {dailyForecast.map((day, index) => (
-          <div className="forecast-card" key={index}>
-            <p className="forecast-time">
+          <div className="forecast-card-alt" key={index}>
+            <p className="forecast-time-alt">
               {new Date(day.dt * 1000).toLocaleDateString("en-US", {
                 weekday: "long",
                 month: "short",
@@ -69,11 +70,16 @@ const Predicted = () => {
             <img
               src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
               alt={day.weather[0].description}
-              className="forecast-icon"
+              className="forecast-icon-alt"
             />
-            <p className="forecast-description">{day.weather[0].description}</p>
-            <p className="forecast-temp">
-              {day.main.temp}°C (Avg)
+            <p className="forecast-description-alt">
+              {day.weather[0].description}
+            </p>
+            <p className="forecast-temp-alt">
+              Avg Temp: <strong>{day.main.temp}°C</strong>
+            </p>
+            <p className="forecast-humidity-alt">
+              Humidity: <strong>{day.main.humidity}%</strong>
             </p>
           </div>
         ))}

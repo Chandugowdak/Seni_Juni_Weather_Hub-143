@@ -18,6 +18,7 @@ import Predicted  from './Middle_Page/Middle_Second_Section/Predicted';
 import AirQuality from './Middle_Page/Middle_Second_Section/AirQuality';
 import CoorgFetchAPI from './Menu_Section/DifferentPlace1.jsx/CoorgFetchAPI';
 import HealthActivity from './Middle_Page/Middle_Second_Section/HealthActivity';
+import Feedback from './Feed_Back_Reciver/Feedback';
 
 const App = ()=>{
  const [latitude, setLatitude] = useState(12.3051); // Default latitude
@@ -45,10 +46,12 @@ const App = ()=>{
           <Route path="/Weather" element={<WeatherNews />} />
           <Route path="/Air_Qu" element={<AirQuality />} />
           <Route path="/Heal_Act" element={<HealthActivity/>}/>
+          <Route path="/Feedback" element={<Feedback/>}/>
           </Route>
         </Routes>
       
         </CreateContext.Provider>
+        
     </div>
   )
 }

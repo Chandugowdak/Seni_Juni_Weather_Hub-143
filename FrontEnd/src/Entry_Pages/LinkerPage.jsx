@@ -7,6 +7,7 @@ const LinkerPage = ()=>{
             <Link to='/login'></Link>
             <Link to='/register'></Link>
             <Link to="/hom" ></Link>
+            
            
            
             

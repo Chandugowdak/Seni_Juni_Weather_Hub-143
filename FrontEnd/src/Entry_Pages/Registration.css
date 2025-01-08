@@ -74,12 +74,15 @@ h2 {
 }
 
 .btn-primary {
-   
     border: none;
     border-radius: var(--border-radius);
     font-size: 1.1rem;
     padding: 0.9rem;
     transition: all 0.3s ease;
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
 }
 
 .btn-primary:hover {

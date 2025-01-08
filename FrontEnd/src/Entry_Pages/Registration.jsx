@@ -81,7 +81,7 @@ const Registration = () => {
                             </div>
 
                             <div className="text-center">
-                                <button type="submit" className="btn btn-primary btn-lg w-100 mt-3">
+                                <button type="submit" id="Login_btn" className="btn btn-primary btn-lg w-100 mt-3">
                                     Register
                                 </button>
                             </div>

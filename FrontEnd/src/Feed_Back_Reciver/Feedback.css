@@ -1,0 +1,189 @@
+/* General Feedback Container Styling */
+.feedback-container {
+    max-width: 1500px;
+    margin: 50px auto;
+    background: linear-gradient(120deg, #aea481, #85fd85);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Weather Information Styling */
+  .weather-info {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+  }
+  
+  .weather-info h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    animation: fade-in 1.5s ease-in-out;
+  }
+  
+  .weather-info p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: fade-in 2s ease-in-out;
+  }
+  
+  .weather-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .weather-info li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    animation: fade-in 2s ease-in-out;
+  }
+  
+  /* Feedback Form Styling */
+  .feedback-form {
+    background: #ffffff;
+    border: 2px solid #f6d365;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feedback-form h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .feedback-form .form-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #555555;
+  }
+  
+  .feedback-form .form-control {
+    border: 2px solid #f6d365;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .feedback-form .btn {
+    background-color: #fda085;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .feedback-form .btn:hover {
+    background-color: #f6d365;
+    color: #ffffff;
+  }
+  
+  /* Feedback List Styling */
+  .feedback-list h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  /* Feedback Card Styling */
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+ 
+}
+
+.feedback-card .avatar {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.feedback-card .avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fda085;
+}
+
+.feedback-card-content {
+    flex-grow: 1;
+}
+
+.feedback-card-content h5 {
+    font-size: 1.5rem;
+    color: #fda085;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feedback-card-content p {
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .feedback-container {
+        max-width: 90%;
+    }
+
+    .weather-info h1 {
+        font-size: 2.5rem;
+    }
+
+    .weather-info p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .feedback-container {
+        padding: 20px;
+    }
+
+    .feedback-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feedback-card .avatar {
+        margin: 0 auto 15px;
+    }
+
+    .feedback-card-content h5 {
+        font-size: 1.3rem;
+    }
+
+    .feedback-card-content p {
+        font-size: 1rem;
+    }
+
+    .feedback-form h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .weather-info h1 {
+        font-size: 2rem;
+    }
+
+    .weather-info p {
+        font-size: 1rem;
+    }
+
+    .feedback-form {
+        padding: 15px;
+    }
+
+    .feedback-form h2 {
+        font-size: 1.2rem;
+    }
+}

@@ -12,6 +12,7 @@ const MiddleSection = () => {
         <Link to="/Air_Qu" className="Sub_Div">Air_Quality</Link>
         <Link to="/Heal_Act" className="Sub_Div">Health & Activities</Link>
         <Link to="/Pred" className="Sub_Div">Predicted</Link>
+        <Link to='/Feedback' className="Sub_Div">FeedBack_Form</Link>
       </div>
     </div>
   );

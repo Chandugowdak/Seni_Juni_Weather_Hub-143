@@ -25,7 +25,7 @@ const App = ()=>{
   const [longitude, setLongitude] = useState(75.7977); // Default longitude
 
   return(
-    <div>
+    <div >
       
       <LinkerPage />
      

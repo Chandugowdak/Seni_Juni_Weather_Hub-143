@@ -32,7 +32,7 @@ const Hoverly = () => {
 
   if (loading) {
     return (
-      <div className="text-center mt-5">
+      <div className="text-center mt-5 ">
         <div className="spinner-border text-secondary" role="status"></div>
         <span className="ms-5 text-center text-success fw-bold fs-4">Loading...</span>
       </div>
@@ -62,9 +62,9 @@ const Hoverly = () => {
     }, []);
 
   return (
-    <div className="container mt-5">
+    <div className="container   mt-5" id="continer">
       {/* Display dynamic city name */}
-      <h1 className="text-center mb-4 heading-text">Hourly Weather Forecast for {cityName}</h1>
+      <h1 className="text-center text-dark fw-bold mb-4 heading-text">Hourly Weather Forecast for {cityName}</h1>
 
       {/* Horizontal Scrolling Container for Hourly Forecast */}
       <div className="hourly-forecast-container">

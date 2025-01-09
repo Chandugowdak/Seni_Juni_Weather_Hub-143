@@ -1,7 +1,7 @@
 /* Make the container occupy the full page */
 .forecast-container-alt {
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: 98vw; /* Full viewport width */
+  height: 140vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,17 +9,20 @@
   padding: 20px;
   color: #000000; /* White text for better contrast */
   box-sizing: border-box;
-  margin-top: 110px; /* Remove margin to fill the screen */
+  margin-top: 0px; /* Remove margin to fill the screen */
+  background:linear-gradient(rgb(255, 140, 0) , rgb(7, 212, 7))
 }
 
 /* Title with vibrant text and shadow */
 .forecast-title-alt {
   text-align: center;
-  font-size: 3rem;
-  color: #000000; /* White color for the title */
- margin:30px;
+  font-size: 4rem;
+  color: #080808; /* White color for the title */
+ margin:40px;
+ padding:10px;
+ border:2px dotted black;
   font-family: 'Roboto', sans-serif;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  text-shadow: 5px 5px 5px rgba(169, 46, 46, 0.6); /* Stronger shadow for depth */
 }
 
 /* Grid layout for the forecast cards */
@@ -33,7 +36,7 @@
 
 /* Individual forecast cards */
 .forecast-card-alt {
-  background: rgba(24, 45, 176, 0.633); /* Semi-transparent white */
+  background: rgba(69, 79, 141, 0.633); /* Semi-transparent white */
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Larger shadow for depth */
   text-align: center;

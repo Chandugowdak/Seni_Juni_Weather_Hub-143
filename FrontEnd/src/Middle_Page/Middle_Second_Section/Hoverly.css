@@ -1,25 +1,28 @@
 /* Container for the hourly forecast */
-.container{
-  max-width:1500px;
-  
+#continer {
+  max-width: 1500px;
+  background: linear-gradient(to bottom, rgb(86, 113, 246), rgb(252, 70, 107));  padding: 50px; /* Optional padding for better appearance */
+  border-radius: 10px;
+  max-height: auto; 
+  margin-top: 0px;
+ 
+
 }
 
 
+/* Grid container for the weather cards */
 .hourly-forecast-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* Creates 4 equal columns */
-  gap: 10px;  /* Adds space between the cards */
-  
-  justify-items: center;  /* Center cards horizontally */
-  background-color: rgb(224, 212, 212);
-  padding:50px;
-  margin:10px;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+  gap: 10px;
+  justify-items: center;
+  padding: 50px;
 }
 
 /* Style for each weather card */
 .weather-card {
   position: relative;
-  width: 100%;  /* Make sure each card takes up 100% of the column width */
+  width: 100%;
   min-width: 150px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -31,13 +34,12 @@
 
 /* Content inside the weather card */
 .weather-card-content {
-  border: 1px solid #e0e0e0;
+  border: 5px solid #e0e0e0;
   border-radius: 10px;
   overflow: hidden;
-  background:linear-gradient(rgb(224, 159, 159),rgb(113, 113, 230));
-  position: relative;
+  background: linear-gradient(rgb(3, 67, 130), rgb(47, 47, 158));   position: relative;
   transition: all 0.3s ease;
-  padding:30px;
+  padding: 30px;
 }
 
 /* Weather Icon size */
@@ -50,9 +52,61 @@
 .card-title {
   font-size: 1.2rem;
   font-weight: bold;
+  
 }
 
 .card-text {
   font-size: 0.9rem;
-  margin: 5px 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  /* For large screens (e.g., tablets in landscape mode) */
+  .hourly-forecast-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  /* For medium screens (e.g., tablets or small laptops) */
+  .hourly-forecast-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+
+  .weather-card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For small screens (e.g., smartphones) */
+  .hourly-forecast-container {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .weather-card-content {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .card-text {
+    font-size: 0.7rem;
+  }
+
+  .weather-icon {
+    width: 60px;
+    height: 60px;
+  }
 }
